@@ -1,7 +1,7 @@
 # Unity Fur Shader
 🐈Fur shader for Unity.
 
-<img src="Docs/Fur_0_4_RimColor.png" width="600"/>
+<img src="Docs/Intro.png"/>
 
 
 #### 0.1 Basic

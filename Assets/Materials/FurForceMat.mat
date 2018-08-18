@@ -85,7 +85,7 @@ Material:
     - _Parallax: 0.02
     - _Reflection: 0
     - _RimPower: 3.84
-    - _Shininess: 7.1
+    - _Shininess: 15
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1

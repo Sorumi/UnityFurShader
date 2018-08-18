@@ -1,6 +1,8 @@
 # Unity Fur Shader
 🐈Fur shader for Unity.
 
+http://sorumi.xyz/posts/unity-fur-shader/
+
 <img src="Docs/Intro.png"/>
 
 

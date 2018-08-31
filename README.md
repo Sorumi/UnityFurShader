@@ -19,7 +19,7 @@ Add fur attributes: density, thinness, shading.
 
 
 #### 0.3 Force
-Add force: global force and localforce .
+Add force: global force and local force .
 
 <img src="Docs/Fur_0_3_Force.png" width="600"/>
 

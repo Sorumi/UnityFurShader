@@ -48,7 +48,7 @@ v2f vert_surface(appdata v)
     o.uv.xy = TRANSFORM_TEX(v.texcoord, _MainTex);
     o.worldNormal = UnityObjectToWorldNormal(v.normal);
     o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
-	o.color = v.color;
+//	o.color = v.color;
 
     return o;
 }
@@ -56,7 +56,7 @@ v2f vert_surface(appdata v)
 v2f vert_base(appdata v)
 {
     v2f o;
-    float3 P = v.vertex.xyz + v.normal * (_FurLength * v.color) * FURSTEP;
+    float3 P = v.vertex.xyz + v.normal * (_FurLength * v.color.r) * FURSTEP;
     P += clamp(mul(unity_WorldToObject, _ForceGlobal).xyz + _ForceLocal.xyz, -1, 1) * pow(FURSTEP, 3) * _FurLength;
     o.pos = UnityObjectToClipPos(float4(P, 1.0));
     o.uv.xy = TRANSFORM_TEX(v.texcoord, _MainTex);

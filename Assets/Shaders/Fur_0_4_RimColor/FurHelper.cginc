@@ -20,6 +20,8 @@ sampler2D _MainTex;
 half4 _MainTex_ST;
 sampler2D _FurTex;
 half4 _FurTex_ST;
+sampler2D _Normal;
+float _NormalFactor;
 
 fixed _FurLength;
 fixed _FurDensity;
@@ -71,6 +73,8 @@ fixed4 frag_surface(v2f i): SV_Target
 {
     
     fixed3 worldNormal = normalize(i.worldNormal);
+	fixed3 frag_normal = (tex2D(_Normal, i.uv)) * _NormalFactor;
+
     fixed3 worldLight = normalize(_WorldSpaceLightPos0.xyz);
     fixed3 worldView = normalize(_WorldSpaceCameraPos.xyz - i.worldPos.xyz);
     fixed3 worldHalf = normalize(worldView + worldLight);
@@ -78,7 +82,7 @@ fixed4 frag_surface(v2f i): SV_Target
     fixed3 albedo = tex2D(_MainTex, i.uv.xy).rgb * _Color;
     fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
     fixed3 diffuse = _LightColor0.rgb * albedo * saturate(dot(worldNormal, worldLight));
-    fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(saturate(dot(worldNormal, worldHalf)), _Shininess);
+    fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(saturate(dot(frag_normal, worldHalf)), _Shininess);
 
     fixed3 color = ambient + diffuse + specular;
     

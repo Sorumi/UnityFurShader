@@ -3,6 +3,8 @@
     Properties
     {
         _Color ("Color", Color) = (1, 1, 1, 1)
+		_Normal("Normal Map", 2D) = "bump" {}
+		_NormalFactor("Normal Factor", float) = 1.0
         _Specular ("Specular", Color) = (1, 1, 1, 1)
         _Shininess ("Shininess", Range(0.01, 256.0)) = 8.0
         

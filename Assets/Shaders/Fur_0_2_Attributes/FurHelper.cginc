@@ -14,6 +14,7 @@ struct v2f
 fixed4 _Color;
 fixed4 _Specular;
 half _Shininess;
+fixed _Emission;
 
 sampler2D _MainTex;
 half4 _MainTex_ST;
@@ -58,7 +59,7 @@ fixed4 frag_surface(v2f i): SV_Target
     fixed3 worldHalf = normalize(worldView + worldLight);
 
     fixed3 albedo = tex2D(_MainTex, i.uv.xy).rgb * _Color;
-    fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
+    fixed3 ambient = albedo * _Emission + UNITY_LIGHTMODEL_AMBIENT.xyz * albedo * (1 - _Emission);
     fixed3 diffuse = _LightColor0.rgb * albedo * saturate(dot(worldNormal, worldLight));
     fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(saturate(dot(worldNormal, worldHalf)), _Shininess);
 
@@ -77,7 +78,7 @@ fixed4 frag_base(v2f i): SV_Target
     fixed3 albedo = tex2D(_MainTex, i.uv.xy).rgb * _Color;
     albedo -= (pow(1 - FURSTEP, 3)) * _FurShading;
 
-    fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz * albedo;
+    fixed3 ambient = albedo * _Emission + albedo * UNITY_LIGHTMODEL_AMBIENT.xyz * (1 - _Emission);
     fixed3 diffuse = _LightColor0.rgb * albedo * saturate(dot(worldNormal, worldLight));
     fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(saturate(dot(worldNormal, worldHalf)), _Shininess);
 

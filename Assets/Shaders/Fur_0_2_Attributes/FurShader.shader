@@ -5,7 +5,8 @@
         _Color ("Color", Color) = (1, 1, 1, 1)
         _Specular ("Specular", Color) = (1, 1, 1, 1)
         _Shininess ("Shininess", Range(0.01, 256.0)) = 8.0
-        
+        _Emission ("Emission", Range(0.0, 1.0)) = 0.0
+		
         _MainTex ("Texture", 2D) = "white" { }
         _FurTex ("Fur Pattern", 2D) = "white" { }
         

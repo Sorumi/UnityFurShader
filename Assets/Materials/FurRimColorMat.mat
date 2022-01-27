@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: FurRimColorMat
   m_Shader: {fileID: 4800000, guid: 39ab10d6b47cc4843bc85a9490ef71f3, type: 3}
   m_ShaderKeywords: 
@@ -73,7 +74,7 @@ Material:
     - _EdgeFade: 0.66
     - _FurDensity: 0.57
     - _FurHardness: 1
-    - _FurLength: 0.04
+    - _FurLength: 0.373
     - _FurShading: 0.302
     - _FurThinness: 5
     - _GlossMapScale: 1
@@ -84,8 +85,8 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Reflection: 0
-    - _RimPower: 2.6
-    - _Shininess: 15
+    - _RimPower: 2.2
+    - _Shininess: 12
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -97,6 +98,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _ForceGlobal: {r: -0.3, g: -0, b: 0, a: 0}
     - _ForceLocal: {r: 0, g: -0.4, b: 0, a: 0}
-    - _RimColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
+    - _RimColor: {r: 0.8490566, g: 0.8020469, b: 0.7249021, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _Specular: {r: 0.3490566, g: 0.33300328, b: 0.28484336, a: 1}
